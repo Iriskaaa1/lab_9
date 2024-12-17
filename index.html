@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР 9</title>
+</head>
+<body>
+    <a href="2index.html" target="_blank">Задание 2</a>
+    <script>
+        function f(a){
+            let  r =1 
+            for(let i =2; i<=a; i++)
+              r = r * i
+            return r
+        }
+        let v = prompt("Введите число",5)
+        if(isNaN(v))
+           console.log("Введено неправильное число")
+        else{
+            let res = f(v)
+            document.write("<h1> Факториал "+v+" = "+res+" <h/1>  ")
+        }
+    </script>
+</body>
+</html>

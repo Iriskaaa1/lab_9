@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 4</title>
+</head>
+<body>
+    <a href="5index.html" target="_blank">Задание 5</a>
+    <script>
+   function fgener() {
+            let count = 0;
+            let mas = [];
+
+            return function findmas(a) {
+                if (mas.includes(a)) {
+                    count++;
+                    console.log(`Element: "${a}" found.`);
+                    console.log(`Array: [${mas}] | Successful Finds: ${count}`);
+                    return true;
+                } else {
+                    mas.push(a);
+                    console.log(`Element: "${a}" not found. Added to array.`);
+                    console.log(`Array: [${mas}] | Successful Finds: ${count}`);
+                    return false;
+                }
+            };
+        }
+
+        // Create two separate instances of the function
+        let f1 = fgener();
+        let f2 = fgener();
+
+        // Common function to prompt the user for input and process it with a given findmas instance
+        function processInput(findmasFunction) {
+            while (true) {
+                let v = prompt("Введите значение (жмите 'Отмена' или оставьте пустым для выхода):");
+                if (!v) break;
+                let result = findmasFunction(v);
+                alert(`Результат поиска: ${(result ? 'Найдено' : 'Не найдено, добавлено в массив')}`);
+            }
+        }
+
+        // Process input for the first function instance
+        alert("Процесс для первой функции:");
+        processInput(f1);
+
+        // Process input for the second function instance
+        alert("Процесс для второй функции:");
+        processInput(f2);
+    </script>
+</body>
+</html>

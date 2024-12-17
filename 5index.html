@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5</title>
+</head>
+<body>
+    <h1>Результаты вычислений</h1>
+    <div id="results"></div>
+
+    <script>
+        // стрелочные функции
+        const absoluteValue = number => Math.abs(number);
+        const makeNegative = number => -Math.abs(number);
+        const squareNumber = number => number * number;
+        const functionsArray = [absoluteValue, makeNegative, squareNumber];
+        // массив целых чисел
+        const numbersArray = [5, -12, 7, 0, -3];
+
+        const resultsDiv = document.getElementById('results');
+
+        
+        numbersArray.forEach(number => {
+            const numberHeader = document.createElement('h2');
+            numberHeader.innerText = `Число: ${number}`;
+            resultsDiv.appendChild(numberHeader);
+
+            functionsArray.forEach(fn => {
+                const result = fn(number);
+                const resultParagraph = document.createElement('p');
+                resultParagraph.innerText = `Результат: ${result}`;
+                resultsDiv.appendChild(resultParagraph);
+            });
+            const separator = document.createElement('hr');
+            resultsDiv.appendChild(separator);
+        });
+    </script>
+</body>
+</html>

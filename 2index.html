@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2 </title>
+</head>
+<body>
+    <a href="3index.html" target="_blank">Задание 3</a>
+    <script>
+        function slist(m){
+            let str = "<ul>"
+            for(let value of m)
+             str += "<li>" + value + "</li>"
+            return str + "</ul>"
+        }
+        let mas = []
+        while(true){
+            let v = prompt("Введите строку")
+            if(!v) break;
+            mas.push(v)
+        }
+        document.write(slist(mas))
+    </script>
+</body>
+</html>

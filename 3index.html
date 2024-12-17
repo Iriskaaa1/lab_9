@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>задание 3</title>
+</head>
+<body>
+    
+    <a href="4index.html" target="_blank">Задание 4</a>
+    <style>
+        .red{background: red;}
+        .blue{background: blue;}
+    </style>
+<script>
+    function fred(str) {
+        return "<div class='red'>" + str + "</div>";
+    }
+    function fblue(str) {
+        return "<div class='blue'>" + str + "</div>";
+    }
+    function fstr(m) {
+        return m.join("<br>");
+    }
+    function flist(m) {
+        let str = "<ul>";
+        for (let value of m) {
+            str += "<li>" + value + "</li>";
+        }
+        return str + "</ul>";
+    }
+
+    let mas = [];
+    while (true) {
+        let v = prompt("Введите строку");
+        if (!v) break;
+        mas.push(v);
+    }
+
+    let f1, f2;
+    if (confirm("Синие блоки?")) f1 = fblue;
+    else f1 = fred;
+    
+    if (confirm("В виде списка?")) f2 = flist;
+    else f2 = fstr;
+    
+    document.write(f1(f2(mas)));
+
+</script>
+
+</body>
+</html>
